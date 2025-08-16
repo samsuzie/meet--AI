@@ -68,7 +68,7 @@ export const SignInView = ()=>{
         {
             onSuccess:()=>{
                 setPending(false);
-                
+                router.push("/");
             },
             onError: ({error})=>{
                 setPending(false);
@@ -168,7 +168,7 @@ export const SignInView = ()=>{
                </div>
                 </form>
             </Form>
-               <div className="bg-radial from-green-150 to-green-400 relative hidden md:flex flex-col
+               <div className="bg-radial from-sidebar-accent to-sidebar relative hidden md:flex flex-col
                gap-y-4 items-center justify-center">
                 <img src="/logo.svg" alt="Image" className="h-[92px] w-{92px]"/>
                 <p className="tex-2xl font-semibold text-black">
