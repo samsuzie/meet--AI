@@ -19,6 +19,6 @@ const t = initTRPC.create({
 // Base router and procedure helpers
 //group of apis
 export const createTRPCRouter = t.router;
-//a single api
 export const createCallerFactory = t.createCallerFactory;
+//one single api
 export const baseProcedure = t.procedure;
