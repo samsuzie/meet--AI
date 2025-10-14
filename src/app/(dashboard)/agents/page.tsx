@@ -1,5 +1,5 @@
 
-import { AgentsErrorView, AgentsView, AgentsViewLoading } from '@/modules/agents/ui/views/agents-view';
+import { AgentsViewError, AgentsView, AgentsViewLoading } from '@/modules/agents/ui/views/agents-view';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import { getQueryClient ,trpc} from '@/trpc/server';
 import React, { Suspense } from 'react'
@@ -36,7 +36,7 @@ const page = async({searchParams}:Props) => {
     <AgentsListHeader/>
     <HydrationBoundary state={dehydrate(queryClient)}>
       <Suspense fallback={<AgentsViewLoading />}>
-        <ErrorBoundary fallback={<AgentsErrorView/>}>
+        <ErrorBoundary fallback={<AgentsViewError/>}>
             <AgentsView/>
         </ErrorBoundary>
         </Suspense>
